@@ -1,0 +1,41 @@
+.success-box {
+    padding: 20px;
+    background-color: darkseagreen;
+    border: 5px solid lightgray;
+    font-size: large;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.scrolling-container {
+    width: 500px; /* Set the width of your container */
+    overflow: hidden;
+}
+
+.scrolling-text-toRight {
+    white-space: nowrap;
+    overflow: hidden;
+    /* animation: scrollText-toRight 10s linear infinite; */
+    animation: scrollText-toRight 10s linear 2; /* 2 indicates the number of iterations */
+}
+
+@keyframes scrollText-toLeft {
+    0% {
+        transform: translateX(100%);
+    }    
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scrollText-toRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    
+    100% {
+        transform: translateX(100%);
+    }
+}
