@@ -1,0 +1,37 @@
+<h1>Assignment 3</h1>
+<h3>Angular Directives</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ol>
+                <li>Add A button which says 'Display Details'</li>
+                <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
+                <li>Toggle the displaying of that paragraph with the button created in the first step</li>
+                <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
+                <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
+              </ol>
+
+              <h2>Answer</h2>
+
+              <!-- <button class="btn btn-primary" (click)="showMagicWord = !showMagicWord">Display Details</button> -->
+              <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+
+              @if(showMagicWord === true)
+              {
+                <p>Magic word = Abrakadabra!</p>                
+              }
+
+              @for(log of logs; track log.id; let idx = $index)
+              {
+                <li [ngStyle]="{backgroundColor: idx >= 4 ? 'blue' : 'transparent'}"
+                    [ngClass]="{'white-text': idx >= 4}"> {{idx +1}}  Logging toggles {{ log }} </li>
+
+              }
+              
+        
+        </div>
+    </div>
+</div>
+    
+      
